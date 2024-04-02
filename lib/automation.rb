@@ -6,6 +6,7 @@ module DiscourseAi
       { id: "gpt-4-turbo", name: "discourse_automation.ai_models.gpt_4_turbo" },
       { id: "gpt-4", name: "discourse_automation.ai_models.gpt_4" },
       { id: "gpt-3.5-turbo", name: "discourse_automation.ai_models.gpt_3_5_turbo" },
+      { id: "mistral-7b-instruct", name: "discourse_automation.ai_models.mistral-7b-instruct" },
       { id: "gemini-pro", name: "discourse_automation.ai_models.gemini_pro" },
       { id: "claude-2", name: "discourse_automation.ai_models.claude_2" },
       { id: "claude-3-sonnet", name: "discourse_automation.ai_models.claude_3_sonnet" },

@@ -10,6 +10,7 @@ module DiscourseAi
 
             %w[
               gpt-3.5-turbo
+              mistral-7b-instruct
               gpt-4
               gpt-3.5-turbo-16k
               gpt-4-32k
@@ -75,7 +76,7 @@ module DiscourseAi
         end
 
         def default_options
-          { model: model == "gpt-4-turbo" ? "gpt-4-0125-preview" : model }
+          { model: model == "gpt-4-turbo" ? "gpt-4-0125-preview" : model == "gdt-3.5-turbo" ? "mistral-7b-instruct" : model }
         end
 
         def provider_id
@@ -121,7 +122,7 @@ module DiscourseAi
           headers =
             { "Content-Type" => "application/json" }.tap do |h|
               if model_uri.host.include?("azure")
-                h["api-key"] = SiteSetting.ai_openai_api_key
+                h["apikey"] = SiteSetting.ai_openai_api_key
               else
                 h["Authorization"] = "Bearer #{SiteSetting.ai_openai_api_key}"
               end
