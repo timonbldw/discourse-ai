@@ -7,7 +7,7 @@ module ::DiscourseAi
         headers = { "Content-Type" => "application/json" }
 
         if SiteSetting.ai_openai_embeddings_url.include?("azure")
-          headers["api-key"] = SiteSetting.ai_openai_api_key
+          headers["apikey"] = SiteSetting.ai_openai_api_key
         else
           headers["Authorization"] = "Bearer #{SiteSetting.ai_openai_api_key}"
         end

@@ -263,6 +263,7 @@ discourse_ai:
       - text-embedding-3-large
       - multilingual-e5-large
       - bge-large-en
+      - bge-m3
       - gemini
     validator: "DiscourseAi::Configuration::EmbeddingsModelValidator"
   ai_embeddings_per_post_enabled:
