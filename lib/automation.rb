@@ -16,6 +16,7 @@ module DiscourseAi
     def self.translate_model(model)
       return "google:gemini-pro" if model == "gemini-pro"
       return "open_ai:#{model}" if model.start_with? "gpt"
+      return "open_ai:mistral-7b-instruct" if model == "mistral-7b-instruct"
 
       if model.start_with? "claude"
         if DiscourseAi::Completions::Endpoints::AwsBedrock.correctly_configured?(model)

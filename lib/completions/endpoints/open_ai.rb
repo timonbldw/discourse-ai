@@ -86,26 +86,7 @@ module DiscourseAi
         private
 
         def model_uri
-          url =
-            if model.include?("gpt-4")
-              if model.include?("32k")
-                SiteSetting.ai_openai_gpt4_32k_url
-              else
-                if model.include?("1106") || model.include?("turbo")
-                  SiteSetting.ai_openai_gpt4_turbo_url
-                else
-                  SiteSetting.ai_openai_gpt4_url
-                end
-              end
-            else
-              if model.include?("16k")
-                SiteSetting.ai_openai_gpt35_16k_url
-              else
-                SiteSetting.ai_openai_gpt35_url
-              end
-            end
-
-          URI(url)
+          URI(SiteSetting.ai_openai_gpt35_url)
         end
 
         def prepare_payload(prompt, model_params, dialect)
