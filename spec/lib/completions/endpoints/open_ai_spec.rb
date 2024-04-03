@@ -144,7 +144,7 @@ end
 
 RSpec.describe DiscourseAi::Completions::Endpoints::OpenAi do
   subject(:endpoint) do
-    described_class.new("mistral-7b-instruct", DiscourseAi::Tokenizer::OpenAiTokenizer)
+    described_class.new("mistral-7b-instruct", DiscourseAi::Tokenizer::MixtralTokenizer)
   end
 
   fab!(:user)
@@ -162,8 +162,14 @@ RSpec.describe DiscourseAi::Completions::Endpoints::OpenAi do
   let(:open_ai_mock) { OpenAiMock.new(endpoint) }
 
   let(:compliance) do
-    EndpointsCompliance.new(self, endpoint, DiscourseAi::Completions::Dialects::ChatGpt, user)
+    EndpointsCompliance.new(self, endpoint, DiscourseAi::Completions::Dialects::Mixtral, user)
   end
+  
+  let(:dialect) { DiscourseAi::Completions::Dialects::Mixtral.new(generic_prompt, model_name) }
+  let(:prompt) { dialect.translate }
+
+  let(:request_body) { model.default_options.merge(prompt: prompt).to_json }
+  let(:stream_request_body) { model.default_options.merge(prompt: prompt, stream: true).to_json }
 
   describe "#perform_completion!" do
     context "when using regular mode" do

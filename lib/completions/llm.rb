@@ -42,8 +42,8 @@ module DiscourseAi
                 Llama2-chat-hf
               ],
               open_ai: %w[
-                gpt-3.5-turbo
                 mistral-7b-instruct
+                gpt-3.5-turbo
                 gpt-4
                 gpt-3.5-turbo-16k
                 gpt-4-32k

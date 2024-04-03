@@ -8,7 +8,6 @@ module DiscourseAi
           def can_translate?(model_name)
             %w[
               gpt-3.5-turbo
-              mistral-7b-instruct
               gpt-4
               gpt-3.5-turbo-16k
               gpt-4-32k

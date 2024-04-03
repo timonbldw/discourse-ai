@@ -5,11 +5,11 @@ module DiscourseAi
     class EntryPoint
       def inject_into(plugin)
         foldable_models = [
+          Models::Mixtral.new("open_ai:mistral-7b-instruct", max_tokens: 8192),
           Models::OpenAi.new("open_ai:gpt-4", max_tokens: 8192),
           Models::OpenAi.new("open_ai:gpt-4-32k", max_tokens: 32_768),
           Models::OpenAi.new("open_ai:gpt-4-0125-preview", max_tokens: 100_000),
           Models::OpenAi.new("open_ai:gpt-3.5-turbo", max_tokens: 4096),
-          Models::OpenAi.new("open_ai:mistral-7b-instruct", max_tokens: 8192),
           Models::OpenAi.new("open_ai:gpt-3.5-turbo-16k", max_tokens: 16_384),
           Models::Llama2.new(
             "hugging_face:Llama2-chat-hf",

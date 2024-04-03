@@ -3,7 +3,7 @@
 require_relative "dialect_context"
 
 RSpec.describe DiscourseAi::Completions::Dialects::Mixtral do
-  let(:model_name) { "mistralai/Mixtral-8x7B-Instruct-v0.1" }
+  let(:model_name) { "mistral-7b-instruct" }
   let(:context) { DialectContext.new(described_class, model_name) }
 
   describe "#translate" do
