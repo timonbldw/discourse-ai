@@ -3,10 +3,10 @@
 RSpec.describe DiscourseAi::AiBot::Tools::Image do
   subject(:tool) { described_class.new({ prompts: prompts, seeds: [99, 32] }) }
 
-  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:gpt-3.5-turbo") }
+  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:mistral-7b-instruct") }
   let(:progress_blk) { Proc.new {} }
 
-  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID) }
+  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::MISTRAL_7B_ID) }
 
   let(:prompts) { ["a pink cow", "a red cow"] }
 

@@ -3,8 +3,8 @@
 RSpec.describe DiscourseAi::AiBot::Tools::Read do
   subject(:tool) { described_class.new({ topic_id: topic_with_tags.id }) }
 
-  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID) }
-  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:gpt-3.5-turbo") }
+  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::MISTRAL_7B_ID) }
+  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:mistral-7b-instruct") }
 
   fab!(:parent_category) { Fabricate(:category, name: "animals") }
   fab!(:category) { Fabricate(:category, parent_category: parent_category, name: "amazing-cat") }

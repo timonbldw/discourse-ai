@@ -200,7 +200,7 @@ RSpec.describe DiscourseAi::AiBot::Playground do
     it "picks the correct llm for persona in PMs" do
       # If you start a PM with GPT 3.5 bot, replies should come from it, not from Claude
       SiteSetting.ai_bot_enabled = true
-      SiteSetting.ai_bot_enabled_chat_bots = "gpt-3.5-turbo|claude-2"
+      SiteSetting.ai_bot_enabled_chat_bots = "gpt-3.5-turbo|mistral-7b-instruct|claude-2"
 
       post = nil
       gpt3_5_bot_user = User.find(DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID)

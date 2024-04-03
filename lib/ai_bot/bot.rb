@@ -165,6 +165,8 @@ module DiscourseAi
           "open_ai:gpt-4-turbo"
         when DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID
           "open_ai:gpt-3.5-turbo-16k"
+        when DiscourseAi::AiBot::EntryPoint::MISTRAL_7B_ID
+          "open_ai:mistral-7b-instruct"
         when DiscourseAi::AiBot::EntryPoint::MIXTRAL_ID
           if DiscourseAi::Completions::Endpoints::Vllm.correctly_configured?(
                "mistralai/Mixtral-8x7B-Instruct-v0.1",

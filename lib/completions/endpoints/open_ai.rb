@@ -76,7 +76,7 @@ module DiscourseAi
         end
 
         def default_options
-          { model: model == "gpt-4-turbo" ? "gpt-4-0125-preview" : model == "gdt-3.5-turbo" ? "mistral-7b-instruct" : model }
+          { model: model == "gpt-4-turbo" ? "gpt-4-0125-preview" : model }
         end
 
         def provider_id

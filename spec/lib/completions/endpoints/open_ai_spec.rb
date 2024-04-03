@@ -15,7 +15,7 @@ class OpenAiMock < EndpointMock
       id: "chatcmpl-6sZfAb30Rnv9Q7ufzFwvQsMpjZh8S",
       object: "chat.completion",
       created: 1_678_464_820,
-      model: "gpt-3.5-turbo-0301",
+      model: "mistral-7b-instruct",
       usage: {
         prompt_tokens: 337,
         completion_tokens: 162,
@@ -46,7 +46,7 @@ class OpenAiMock < EndpointMock
       id: "chatcmpl-#{SecureRandom.hex}",
       object: "chat.completion.chunk",
       created: 1_681_283_881,
-      model: "gpt-3.5-turbo-0301",
+      model: "mistral-7b-instruct",
       choices: [{ delta: message_content }],
       finish_reason: finish_reason,
       index: 0,
@@ -144,7 +144,7 @@ end
 
 RSpec.describe DiscourseAi::Completions::Endpoints::OpenAi do
   subject(:endpoint) do
-    described_class.new("gpt-3.5-turbo", DiscourseAi::Tokenizer::OpenAiTokenizer)
+    described_class.new("mistral-7b-instruct", DiscourseAi::Tokenizer::OpenAiTokenizer)
   end
 
   fab!(:user)

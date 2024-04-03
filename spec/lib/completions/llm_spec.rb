@@ -45,7 +45,7 @@ RSpec.describe DiscourseAi::Completions::Llm do
       )
       result = +""
       described_class
-        .proxy("open_ai:gpt-3.5-turbo")
+        .proxy("open_ai:mistral-7b-instruct")
         .generate(prompt, user: user) { |partial| result << partial }
 
       expect(result).to eq("Hello")

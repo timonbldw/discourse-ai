@@ -6,8 +6,8 @@ RSpec.describe DiscourseAi::AiBot::Tools::Search do
 
   before { SiteSetting.ai_openai_api_key = "asd" }
 
-  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID) }
-  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:gpt-3.5-turbo") }
+  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::MISTRAL_7B_ID) }
+  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:mistral-7b-instruct") }
   let(:progress_blk) { Proc.new {} }
 
   fab!(:admin)

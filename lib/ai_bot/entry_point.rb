@@ -16,10 +16,12 @@ module DiscourseAi
       FAKE_ID = -116 # only used for dev and test
       CLAUDE_3_OPUS_ID = -117
       CLAUDE_3_SONNET_ID = -118
+      MISTRAL_7B_ID = -119
 
       BOTS = [
         [GPT4_ID, "gpt4_bot", "gpt-4"],
         [GPT3_5_TURBO_ID, "gpt3.5_bot", "gpt-3.5-turbo"],
+        [MISTRAL_7B_ID, "mistral_bot", "mistral-7b-instruct"],
         [CLAUDE_V2_ID, "claude_bot", "claude-2"],
         [GPT4_TURBO_ID, "gpt4t_bot", "gpt-4-turbo"],
         [MIXTRAL_ID, "mixtral_bot", "mixtral-8x7B-Instruct-V0.1"],
@@ -55,6 +57,8 @@ module DiscourseAi
           CLAUDE_V2_ID
         in "mixtral-8x7B-Instruct-V0.1"
           MIXTRAL_ID
+        in "mistral-7b-instruct"
+          MISTRAL_7B_ID
         in "gemini-pro"
           GEMINI_ID
         in "fake"

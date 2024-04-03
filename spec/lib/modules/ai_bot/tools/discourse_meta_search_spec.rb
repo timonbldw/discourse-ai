@@ -5,8 +5,8 @@ RSpec.describe DiscourseAi::AiBot::Tools::DiscourseMetaSearch do
     SiteSetting.ai_openai_api_key = "asd"
   end
 
-  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::GPT3_5_TURBO_ID) }
-  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:gpt-3.5-turbo") }
+  let(:bot_user) { User.find(DiscourseAi::AiBot::EntryPoint::MISTRAL_7B_ID) }
+  let(:llm) { DiscourseAi::Completions::Llm.proxy("open_ai:mistral-7b-instruct") }
   let(:progress_blk) { Proc.new {} }
 
   let(:mock_search_json) { plugin_file_from_fixtures("search.json", "search_meta").read }

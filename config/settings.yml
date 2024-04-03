@@ -323,10 +323,11 @@ discourse_ai:
     refresh: true
   ai_bot_enabled_chat_bots:
     type: list
-    default: "gpt-3.5-turbo"
+    default: "mistral-7b-instruct"
     client: true
     choices:
       - gpt-3.5-turbo
+      - mistral-7b-instruct
       - gpt-4
       - gpt-4-turbo
       - claude-2
